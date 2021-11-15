@@ -9,6 +9,8 @@ public class PlayerCharacterScript : MonoBehaviour
     public Animator MyAnimator;
     public int Cash;
     public Text cashUI;
+    public float PanicAmount;
+    public Slider panicUI;
 
 
     // Start is called before the first frame update
@@ -16,6 +18,8 @@ public class PlayerCharacterScript : MonoBehaviour
     {
         Cash = 0;
         UpdateCashUI();
+        PanicAmount = 0.0f;
+        updatePanicUI();
     }
 
     // Update is called once per frame
@@ -102,6 +106,10 @@ public class PlayerCharacterScript : MonoBehaviour
         cashUI.text = "Money: $" + Cash;
     }
 
+    public void updatePanicUI()
+    {
+        panicUI.value = PanicAmount;
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -111,6 +119,14 @@ public class PlayerCharacterScript : MonoBehaviour
                 Destroy(collision.gameObject);
             Cash += 25;
             UpdateCashUI();
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            PanicAmount += 0.05f;
+            updatePanicUI();
         }
     }
 }
