@@ -6,6 +6,7 @@ TagManager:
   tags:
   - money
   - Enemy
+  - hazard
   layers:
   - Default
   - TransparentFX

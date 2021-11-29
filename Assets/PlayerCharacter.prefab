@@ -99,10 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61935804cf6875e429abe535574309c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 10
+  Speed: 25
   MyAnimator: {fileID: 4845506150116746788}
   Cash: 0
   cashUI: {fileID: 0}
+  PanicAmount: 0
+  panicUI: {fileID: 0}
 --- !u!95 &4845506150116746788
 Animator:
   serializedVersion: 3
