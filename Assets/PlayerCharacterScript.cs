@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerCharacterScript : MonoBehaviour
 {
@@ -113,11 +114,17 @@ public class PlayerCharacterScript : MonoBehaviour
     public void updatePanicUI()
     {
         panicUI.value = PanicAmount;
+        if (PanicAmount >= 1.0f) {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 
     public void UpdateHealthUI()
     {
         HealthUI.value = Health;
+        if (Health <= 0.0f) {
+            SceneManager.LoadScene("Game Over");
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
