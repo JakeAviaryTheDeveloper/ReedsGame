@@ -14,8 +14,12 @@ public class PlayerCharacterScript : MonoBehaviour
     public Slider panicUI;
     public float Health;
     public Slider HealthUI;
+    public int Bats;
+    public Text BatsUI;
+    public GameObject BatPrefab;
 
-
+    // oh my god uwuwuwuwuwu
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +29,30 @@ public class PlayerCharacterScript : MonoBehaviour
         updatePanicUI();
         Health = 1.0f;
         UpdateHealthUI();
+        Bats = 0;
+        UpdateBatsUI();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Handle attacking with the bat.
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (Bats > 0)
+            {
+                GameObject newBat = Instantiate<GameObject>(BatPrefab);
+                newBat.transform.position = transform.position;
+                BatScript newbatscript = newBat.GetComponent<BatScript>();
+                newbatscript.Swing = true;
+                newbatscript.myParent = gameObject;
+                newBat.GetComponent<BatScript>().Swing = true;
+                Bats -= 1;
+                UpdateBatsUI();
+           }
+        }
+
         bool IsMoving = false;
         Vector2 movement = Vector2.zero;
         //this code handles movementto the right.
@@ -126,7 +149,10 @@ public class PlayerCharacterScript : MonoBehaviour
             SceneManager.LoadScene("Game Over");
         }
     }
-
+    public void UpdateBatsUI()
+    {
+        BatsUI.text = Bats.ToString();
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
       if (collision.tag == "money")
@@ -149,7 +175,13 @@ public class PlayerCharacterScript : MonoBehaviour
             UpdateHealthUI();
         }
 
-
+        if (collision.tag == "bat")
+        {
+            Bats += 1;
+            UpdateBatsUI();
+            Destroy(collision.gameObject);
+        }
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
