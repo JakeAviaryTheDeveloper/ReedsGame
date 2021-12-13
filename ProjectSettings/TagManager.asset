@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - hazard
   - bat
+  - BatAttack
+  - HealthPickup
   layers:
   - Default
   - TransparentFX
@@ -15,7 +17,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - BatAttack
   - 
   - 
   - 

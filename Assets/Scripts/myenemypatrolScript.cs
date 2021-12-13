@@ -55,9 +55,18 @@ public class myenemypatrolScript : MonoBehaviour
         directionToTarget = directionToTarget.normalized;
 
         //multiply by speed
-        directionToTarget *= Speed;
+        directionToTarget *= Speed * Time.deltaTime;
 
         GetComponent<Rigidbody2D>().AddForce(directionToTarget);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "BatAttack")
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
 }

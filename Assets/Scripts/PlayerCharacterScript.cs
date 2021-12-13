@@ -58,25 +58,25 @@ public class PlayerCharacterScript : MonoBehaviour
         //this code handles movementto the right.
         if (Input.GetKey(KeyCode.D))
         {
-            movement = movement + (new Vector2(Speed, 0.0f));
+            movement = movement + (new Vector2(Speed * Time.deltaTime, 0.0f));
             IsMoving = true;
         }
          
         if (Input.GetKey(KeyCode.A))
         {
-            movement = movement - (new Vector2(Speed, 0.0f));
+            movement = movement - (new Vector2(Speed * Time.deltaTime, 0.0f));
             IsMoving = true;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            movement = movement - (new Vector2(0.0f, Speed));
+            movement = movement - (new Vector2(0.0f, Speed * Time.deltaTime));
             IsMoving = true;
         }
 
         if (Input.GetKey(KeyCode.W))
         {
-            movement = movement + (new Vector2(0.0f, Speed));
+            movement = movement + (new Vector2(0.0f, Speed * Time.deltaTime));
             IsMoving = true;
         }
 
@@ -181,7 +181,19 @@ public class PlayerCharacterScript : MonoBehaviour
             UpdateBatsUI();
             Destroy(collision.gameObject);
         }
-        
+        if (collision.gameObject.tag == "HealthPickup")
+        {
+            Health += 0.1f;
+            
+            if (Health > 1.0f)
+            {
+                Health = 1.0f;
+
+                
+            }
+            UpdateHealthUI();
+            Destroy(collision.gameObject);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

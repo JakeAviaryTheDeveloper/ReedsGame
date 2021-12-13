@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Swing: 0
-  SwingSpeed: -1.4
+  SwingSpeed: -300
+  myParent: {fileID: 0}
 --- !u!1 &4571847873351257022
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,9 +57,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6486025298445257184}
   - component: {fileID: 5972670737018697341}
+  - component: {fileID: 2822645203694032385}
   m_Layer: 0
   m_Name: bat (1)
-  m_TagString: Untagged
+  m_TagString: BatAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +118,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 4a1c03d9b759b4a4a98f66f83d0aa17a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -128,3 +130,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &2822645203694032385
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571847873351257022}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7, y: 7}
+    newSize: {x: 7, y: 7}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.2462951, y: -0.6280728}
+      - {x: -1.3541422, y: -0.9773229}
+      - {x: -1.3807418, y: -0.84922516}
+      - {x: -2.3198822, y: -1.864743}
+      - {x: -2.54844, y: -2.0179348}
+      - {x: -2.6463745, y: -1.7671775}
+      - {x: -2.7455704, y: -2.4053216}
+      - {x: -2.3116817, y: -2.3844068}
+      - {x: -2.4929442, y: -2.8127434}
+      - {x: -2.0401692, y: -2.8026426}
+      - {x: -1.5812653, y: -2.3935313}
+      - {x: -1.3181262, y: -1.8762759}
+      - {x: 1.7931575, y: 0.037595928}
+      - {x: 2.4897645, y: 1.1714607}
+      - {x: 2.1599998, y: 2.1399999}
+      - {x: 2.06, y: 2.22}
+      - {x: 1.22, y: 2.46}
+      - {x: 0.55999994, y: 2.4299998}
+      - {x: 0.95, y: 2.3999999}
+      - {x: -0.45999998, y: 1.14}
+      - {x: -0.65999997, y: 0.88}
+      - {x: -0.43, y: 1.0799999}
