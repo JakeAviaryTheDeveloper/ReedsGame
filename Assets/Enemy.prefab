@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2297753859484627165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.46, y: -9.99, z: -0.65574646}
+  m_LocalPosition: {x: 17.77, y: 2.05, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700405326041477736}
@@ -87,7 +87,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3169373393953337459}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.64, y: -8.74, z: -0.65574646}
+  m_LocalPosition: {x: 12.64, y: -4.56, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 700405326041477736}
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 9202634311409708331}
   - component: {fileID: 1513670719480839025}
   - component: {fileID: 2950679669002340166}
-  - component: {fileID: 1665647298070908972}
+  - component: {fileID: 7151891051455571378}
   m_Layer: 0
   m_Name: Civilian
   m_TagString: Enemy
@@ -168,7 +168,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: e7569e0701ea5b044b70751932c41fac, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.5782331, b: 0.2688679, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -225,7 +225,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1665647298070908972
+--- !u!114 &7151891051455571378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,11 +234,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8444408824319982655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4428980e2815d1f40a7fc1d38c3d72ea, type: 3}
+  m_Script: {fileID: 11500000, guid: aa9a158791cb8ad468029a619f41eda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2800
-  StartWayP: {fileID: 2297753859484627165}
-  EndWayP: {fileID: 3169373393953337459}
-  Direction: 0
-  Proximity: 0.2
+  speed: 0
+  targetWaypoint: 0
+  wayPoints:
+  - {fileID: 2297753859484627165}
+  - {fileID: 3169373393953337459}

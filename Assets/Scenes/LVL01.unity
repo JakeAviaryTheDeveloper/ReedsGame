@@ -3713,15 +3713,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4845506150894442851, guid: 4a37dd9ac61ac154687f902e4ded51f9, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.5
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 4845506150894442851, guid: 4a37dd9ac61ac154687f902e4ded51f9, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.5
+      value: 0.5019608
       objectReference: {fileID: 0}
     - target: {fileID: 4845506150894442851, guid: 4a37dd9ac61ac154687f902e4ded51f9, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.5
+      value: 0.5019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a37dd9ac61ac154687f902e4ded51f9, type: 3}
