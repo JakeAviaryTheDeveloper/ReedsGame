@@ -22,6 +22,17 @@ public class MoveEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (transform.position == wayPoints[targetWaypoint].transform.position)
+        { targetWaypoint += 1;
+        }
+        int wpMax = wayPoints.Count - 1;
+        if (targetWaypoint > wpMax)
+        {
+            targetWaypoint = 0;
+        }
+
+        var step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, wayPoints[targetWaypoint].transform.position, step);
     }
+
 }
