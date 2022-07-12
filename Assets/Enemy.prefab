@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1808564510539126538}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: StartPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 700405326041477736}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5120723434915791226}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EndPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 1513670719480839025}
   - component: {fileID: 2950679669002340166}
   - component: {fileID: 7151891051455571378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Civilian
   m_TagString: Enemy
   m_Icon: {fileID: 0}
