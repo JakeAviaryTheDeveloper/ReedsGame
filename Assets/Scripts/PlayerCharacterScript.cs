@@ -17,6 +17,7 @@ public class PlayerCharacterScript : MonoBehaviour
     public int Bats;
     public Text BatsUI;
     public GameObject BatPrefab;
+    public float detectRange;
 
     // oh my god uwuwuwuwuwu
     
@@ -36,6 +37,14 @@ public class PlayerCharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //check if we are near an enemy and create panic if we are
+        var enemyCheck = Physics2D.OverlapCircle(transform.position, detectRange, (1 << 8));
+        if (enemyCheck != null)
+        {
+            PanicAmount += 0.1f;
+        }
+
         // Handle attacking with the bat.
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -52,6 +61,7 @@ public class PlayerCharacterScript : MonoBehaviour
                 UpdateBatsUI();
            }
         }
+
 
         bool IsMoving = false;
         Vector2 movement = Vector2.zero;
